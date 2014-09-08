@@ -7,7 +7,7 @@ while [[ $REPLY != 0 ]]; do
 	cat <<- _EOF_
 		Please Select:
 
-		1. Convert Farenheit to Celsius
+		1. Convert Farenheit to Celsius and Kelvin
 		0. Quit
 
 	_EOF_
@@ -19,8 +19,10 @@ while [[ $REPLY != 0 ]]; do
 
 
 		c=$(echo "scale=2; ($temp - 32)*5/9" | bc)
+		d=$(echo "scale=2; ($c + 273.15)" | bc)
+
+		echo "$temp F = $c C = $d K"
 		
-		echo "$temp F = $c C"
 		sleep $DELAY
 		fi
 	else
