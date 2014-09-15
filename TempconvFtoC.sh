@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DELAY=3
+DELAY=5
 
 while [[ $REPLY != 0 ]]; do
 	clear
